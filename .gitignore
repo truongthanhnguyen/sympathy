@@ -27,3 +27,5 @@ config/environments/*.local.yml
 .DS_Store
 /.idea
 /config/application.yml
+.framgia-ci-result.temp.yml
+/.framgia-ci-reports
