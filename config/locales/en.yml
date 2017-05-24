@@ -1,9 +1,15 @@
 en:
+  dictionary:
+    register: &register "Register"
+    login: &login "Login"
+    password: &password "Password"
+    title: &title "SYMPATHY|Share and explore your music interest"
+    site_name: &site_name "SYMPATHY"
   layouts:
     application:
       title: &title "SYMPATHY|Share and explore your music interest"
     header:
-      title: "SYMPATHY"
+      title: *site_name
       home: "Home"
       explore: "Explore"
       go_to_profile: "Go to profile"
@@ -16,6 +22,25 @@ en:
   pages:
     index:
       title: *title
+      sign_in: &sign_in "Sign in"
     show:
       title: "Home "
       profile: "Profile"
+
+  devise:
+    shared:
+      links:
+        submit: "Submit"
+    registrations:
+      new:
+        title: *site_name
+        register: *register
+      edit:
+        title: *site_name
+        register: *register
+    sessions:
+      new:
+        title: *site_name
+        login: *login
+        email: "Email"
+        password: *password

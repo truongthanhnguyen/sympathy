@@ -11,8 +11,13 @@ gem "jbuilder", "~> 2.5"
 gem "rails-i18n"
 gem "bootstrap-sass", "~> 3.3.6"
 
+gem "devise"
+gem "omniauth"
+gem "omniauth-facebook"
+
 group :development, :test do
   gem "byebug", platform: :mri
+  gem "dotenv-rails"
 end
 
 group :development do
