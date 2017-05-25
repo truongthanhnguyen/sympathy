@@ -127,6 +127,11 @@ aside {
       text-align: left;
     }
   }
+
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
 }
 
 .stats {
@@ -156,10 +161,6 @@ aside {
   }
 }
 
-.users.follow {
-  padding: 0;
-}
-
 input,
 textarea,
 select,
@@ -168,10 +169,6 @@ select,
   border: 1px solid $b;
   margin-bottom: 15px;
   width: 100%;
-}
-
-input {
-  height: auto !important;
 }
 
 .error-explanation {
@@ -184,7 +181,6 @@ input {
 }
 
 .field-with-errors {
-  @extend .has-error;
 
   .form-control {
     color: $state-danger-text;
@@ -215,11 +211,8 @@ input {
     overflow: auto;
     padding: 10px 0;
   }
-}
 
-aside {
-  textarea {
-    height: 100px;
-    margin-bottom: 5px;
+  .users.follow {
+    padding: 0;
   }
 }

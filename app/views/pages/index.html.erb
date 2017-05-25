@@ -12,6 +12,7 @@
     <div class="container-fluid">
       <% provide :title, t(".title") %>
       <h1><%= t ".title" %></h1>
+      <%= link_to t(".sign_in"), new_user_session_path, class: 'btn btn-info' %>
     </div>
   </body>
 </html>
