@@ -44,3 +44,11 @@ en:
         login: *login
         email: "Email"
         password: *password
+
+  user:
+    view_my_profile: "view my profile"
+    all_users: "All Users"
+    delete: "delete"
+    you_sure?: "You sure?"
+    follow: "Follow"
+    unfollow: "Unfollow"
