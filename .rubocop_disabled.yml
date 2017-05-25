@@ -52,6 +52,10 @@ Metrics/ParameterLists:
   Description: "Avoid parameter lists longer than three or four parameters."
   Enabled: false
 
+Metrics/PerceivedComplexity:
+  Description: "Too much complexity in if-condition flow"
+  Enabled: false
+
 Style/EmptyMethod:
   Description: 'Checks the formatting of empty method definitions.'
   StyleGuide: '#no-single-line-methods'
