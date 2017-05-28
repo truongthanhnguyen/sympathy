@@ -1,0 +1,13 @@
+<h1><%= t "post.all_post" %></h1>
+<% @posts.each do |post|%>
+<div class="post">
+  <p class="lead">
+    by <%= link_to post.user.name, post.user %>
+  </p>
+  <p><span class="glyphicon glyphicon-time"></span>
+    <%= t "post.posted" %><%= time_ago_in_words(post.created_at) %><%= t "post.ago" %></p>
+  <p><%= post.content_type %> </p>
+  <hr>
+</div>
+<% end %>
+<%= will_paginate %>

@@ -7,6 +7,7 @@
         <%= @user.email %>
       </h1>
       <span><%= link_to t("user.view_my_profile"), @user %></span>
+      <span><b><%= t "post.post" %></b> <%= @user.posts.count %></span>
     </section>
     <section class="stats">
       <%= render "shared/stats" %>

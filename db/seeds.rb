@@ -7,6 +7,12 @@ User.create!(name: "Example User", email: "example@railstutorial.org", password:
 	User.create!(name: name, email: email, password: password, encrypted_password: password)
 end
 
+users = User.order(:created_at).take(6)
+50.times do
+  content_type = Faker::Lorem.sentence(5)
+  users.each {|user| user.posts.create!(content_type: content_type)}
+end
+
 users = User.all
 user  = users.first
 following = users[2..50]
