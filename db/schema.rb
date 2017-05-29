@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170525191833) do
+ActiveRecord::Schema.define(version: 20170529064048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20170525191833) do
     t.integer  "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_comments_on_post_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
   create_table "identities", force: :cascade do |t|
@@ -37,6 +39,7 @@ ActiveRecord::Schema.define(version: 20170525191833) do
     t.string   "urls"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.index ["user_id"], name: "index_identities_on_user_id", using: :btree
   end
 
   create_table "likes", force: :cascade do |t|
@@ -46,6 +49,9 @@ ActiveRecord::Schema.define(version: 20170525191833) do
     t.datetime "updated_at",    null: false
     t.integer  "likeable_id"
     t.string   "likeable_type"
+    t.index ["likeable_id", "likeable_type"], name: "index_likes_on_likeable_id_and_likeable_type", unique: true, using: :btree
+    t.index ["post_id"], name: "index_likes_on_post_id", using: :btree
+    t.index ["user_id"], name: "index_likes_on_user_id", using: :btree
   end
 
   create_table "notifications", force: :cascade do |t|
@@ -69,6 +75,8 @@ ActiveRecord::Schema.define(version: 20170525191833) do
     t.integer  "playlist_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["playlist_id"], name: "index_playlist_tracks_on_playlist_id", using: :btree
+    t.index ["track_id"], name: "index_playlist_tracks_on_track_id", using: :btree
   end
 
   create_table "playlists", force: :cascade do |t|
@@ -77,6 +85,7 @@ ActiveRecord::Schema.define(version: 20170525191833) do
     t.integer  "user_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.index ["user_id"], name: "index_playlists_on_user_id", using: :btree
   end
 
   create_table "posts", force: :cascade do |t|
@@ -85,6 +94,7 @@ ActiveRecord::Schema.define(version: 20170525191833) do
     t.integer  "user_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.index ["content_id", "content_type"], name: "index_posts_on_content_id_and_content_type", unique: true, using: :btree
     t.index ["user_id", "created_at"], name: "index_posts_on_user_id_and_created_at", using: :btree
   end
 
@@ -105,6 +115,7 @@ ActiveRecord::Schema.define(version: 20170525191833) do
     t.integer  "user_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.index ["user_id"], name: "index_tracks_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -127,4 +138,5 @@ ActiveRecord::Schema.define(version: 20170525191833) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "identities", "users"
 end
