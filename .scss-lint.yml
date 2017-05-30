@@ -1,9 +1,6 @@
 scss_files:
   - 'app/assets/stylesheets/**'
-exclude:
-  - 'app/assets/stylesheets/application.css'
-  - 'app/assets/stylesheets/custom.scss'
-  - 'vendor/assets/**'
+exclude: []
 linters:
   ImportantRule:
     enabled: false
