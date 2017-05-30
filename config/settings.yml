@@ -1,2 +1,6 @@
 users:
   per_page: 15
+comment:
+  content_length: 244
+post:
+  content_length: 1000

@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   	resources :relationships, only: [:index]
   end
   resources :relationships, only: [:create, :destroy]
+  resources :posts, only: [:index, :show] do
+    resources :comments, only: [:create]
+  end
 end

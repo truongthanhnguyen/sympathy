@@ -5,6 +5,7 @@ $gray-medium-light: #eaeaea;
 $red: #f00;
 $blue: #00f;
 $b: #bbb;
+$b1: #e8e8e8;
 
 @mixin box-sizing {
   box-sizing: border-box;
@@ -184,7 +185,6 @@ input {
 }
 
 .field-with-errors {
-  @extend .has-error;
 
   .form-control {
     color: $state-danger-text;
@@ -223,3 +223,34 @@ aside {
     margin-bottom: 5px;
   }
 }
+
+.posts {
+  list-style: none;
+  padding: 0;
+
+  li {
+    border-top: 1px solid $b1;
+    padding: 10px 0;
+  }
+
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+
+  .content {
+    display: block;
+    margin-left: 60px;
+
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
+  }
+ }

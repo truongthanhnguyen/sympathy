@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-lg-8">
+    <p class="lead">
+      <%= t "post.posted_by"%> <%= link_to @post.user_name, @post.user %>
+    </p>
+    <span class="glyphicon glyphicon-time"></span>
+    <%= timeago(@post.created_at) %>
+    <hr>
+    <p class="lead"><%= @post.content_type %></p>
+    <hr>
+    <div class="well" id="well">
+      <h4><%= t "comment.leave_a_comment" %></h4>
+      <%= form_for @comment, :url => post_comments_path(@post) do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+      <%= f.text_area :content, placeholder: t("comment.compose_new_comment"), class: "form-control" %>
+      <%= f.submit t("comment.submit"), class: "btn btn-primary" %>
+      <% end %>
+    </div>
+    <hr>
+    <% @comments.each do |comment| %>
+    <div class="media">
+      <div class="media-body">
+        <h4 class="media-heading"><%= link_to comment.user_name, comment.user %>
+          <small>
+            <span class="timestamp">
+              <%= t "comment.created_at" %> <%= timeago(comment.created_at) %>
+            </span>
+          </small>
+        </h4>
+        <%= comment.content %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
