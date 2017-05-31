@@ -216,3 +216,22 @@ select,
     padding: 0;
   }
 }
+
+.comment {
+  border-bottom: 1px solid $gray-lighter;
+  padding: 12px 0;
+}
+
+.show-comment {
+  margin-bottom: 100px;
+}
+
+.comment-form {
+  margin-top: 15px;
+}
+
+.timestamp {
+  color: $gray-light;
+  display: block;
+  font-size: 12px;
+}
