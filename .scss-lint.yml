@@ -2,9 +2,5 @@ scss_files:
   - 'app/assets/stylesheets/**'
 exclude: []
 linters:
-  ImportantRule:
-    enabled: false
-  MergeableSelector:
-    enabled: false
-  StringQuotes:
-    enabled: false
+  Comment:
+    exclude: 'app/assets/stylesheets/application.css'

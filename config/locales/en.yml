@@ -28,9 +28,20 @@ en:
       profile: "Profile"
 
   devise:
+    passwords:
+      edit:
+        title: "Change your password"
     shared:
       links:
         submit: "Submit"
+    confirmations:
+      new:
+        title: "Comfirmation"
+        submit: "Submit"
+    mailer:
+      email_changed:
+        unconfirmed: "We're contacting you to notify you that your email change"
+        confirmed: "We're contacting you to notify you that your email changed "
     registrations:
       new:
         title: *site_name
@@ -38,6 +49,8 @@ en:
       edit:
         title: *site_name
         register: *register
+        cancel_account: "Cancel Account"
+        check_sure: "Are you sure?"
     sessions:
       new:
         title: *site_name

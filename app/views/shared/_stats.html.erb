@@ -2,9 +2,9 @@
   <% [:following, :followers].each do |relationship| %>
     <div class="col-md-3">
       <div id="<%= relationship %>">
-        <%= @user.send(relationship).size %>
+        <%= user.send(relationship).size %>
       </div>
-      <%= link_to relationship, user_relationships_path(@user, type: relationship) %>
+      <%= link_to relationship, user_relationships_path(user, type: relationship) %>
     </div>
   <% end %>
 </div>
