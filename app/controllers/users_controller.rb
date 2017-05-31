@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  before_action :user_signed_in?
-
   def index
     @users = User.paginate page: params[:page],
       per_page: Settings.users.per_page
@@ -10,5 +8,6 @@ class UsersController < ApplicationController
     @user = User.find params[:id]
     @relationship = current_user.active_relationships
       .find_by followed_id: @user.id
+    @posts = @user.posts.new_first.paginate page: params[:page]
   end
 end
